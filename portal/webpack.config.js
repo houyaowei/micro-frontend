@@ -12,9 +12,9 @@ module.exports = {
     publicPath: "",
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
-    // libraryTarget: "system"
   },
   module: {
+    unknownContextCritical: false,
     rules: [
       {
         test: /\.js?$/,
@@ -55,19 +55,19 @@ module.exports = {
       "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
     },
     proxy: {
-      "/react15App": {
+      "/15react15": {
         target: "http://localhost:7102",
         pathRewrite: function(url) {
-          return url.replace(/\/react15App/, "");
+          return url.replace(/\/15react15/, "");
         }
       },
-      "/react16App": {
+      "/react": {
         target: "http://localhost:7100",
-        pathRewrite: { "^/react16App": "" }
+        pathRewrite: { "^/react": "" }
       },
-      "/vueApp": {
+      "/vue": {
         target: "http://localhost:7101",
-        pathRewrite: { "^/vueApp": "" }
+        pathRewrite: { "^/vue": "" }
       }
     }
   }

@@ -1,8 +1,8 @@
-import "antd/dist/antd.min.css";
+require("babel-polyfill");
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import "./index.css";
+// import "./index.css";
 
 export async function bootstrap() {
   console.log("react15 app bootstraped");

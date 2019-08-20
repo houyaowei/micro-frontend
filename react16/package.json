@@ -4,19 +4,31 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel serve index.html --global reactapp --port 7100",
+    "start": "webpack-dev-server -d --port 7100",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antd": "^3.18.2",
+    "antd": "^3.22.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0"
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "style-loader": "^1.0.0",
+    "css-loader": "^3.2.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.3"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "file-loader": "^1.1.11",
+    "webpack": "^4.12.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
   },
   "browserslist": [
     "last 2 Chrome versions"

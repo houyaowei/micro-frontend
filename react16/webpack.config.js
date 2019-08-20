@@ -1,18 +1,17 @@
 const path = require("path");
-const HTMLWebpachPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: "./index.js",
-    store: "./store.js"
+    index: "./src/index.js",
+    store: "./src/store.js"
   },
 
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "release"),
+    path: path.resolve(__dirname, "dist"),
     libraryTarget: "umd",
-    library: "15react15",
-    jsonpFunction: `webpackJsonp_15react15`
+    library: "react",
+    jsonpFunction: `webpackJsonp_react`
   },
 
   module: {
@@ -26,17 +25,6 @@ module.exports = {
         test: /\.css/,
         use: ["style-loader", "css-loader"],
         exclude: /node_modules/
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              publicPath: "/app1/"
-            }
-          }
-        ]
       }
     ]
   },
@@ -53,10 +41,5 @@ module.exports = {
       "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
       "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
     }
-  },
-  plugins: [
-    new HTMLWebpachPlugin({
-      template: "./index.html"
-    })
-  ]
+  }
 };

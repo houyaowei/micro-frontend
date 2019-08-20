@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "element-ui": "^2.8.2",
+    "element-ui": "^2.11.1",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },

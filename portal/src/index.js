@@ -21,24 +21,26 @@ function genActiveRule(routerPrefix) {
   return location => location.pathname.startsWith(routerPrefix);
 }
 const globalEventdistributor = new GlobalEventdistributor();
-let props = registerStore("/react15App/store.js", globalEventdistributor);
+let props = registerStore("/15react15/store.js", globalEventdistributor);
 
 registerMicroApps(
   [
     {
-      name: "react16App",
+      name: "react app",
       entry: "//localhost:7100",
       render,
-      activeRule: genActiveRule("/react")
+      activeRule: genActiveRule("/react"),
+      props: registerStore("/react/store.js", globalEventdistributor)
     },
     {
-      name: "react15App",
+      name: "react15 app",
       entry: "//localhost:7102",
       render,
-      activeRule: genActiveRule("/15react15")
+      activeRule: genActiveRule("/15react15"),
+      props: registerStore("/15react15/store.js", globalEventdistributor)
     },
     {
-      name: "vueApp",
+      name: "vue app",
       entry: "//localhost:7101",
       render,
       activeRule: genActiveRule("/vue")

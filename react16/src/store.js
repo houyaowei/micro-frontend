@@ -19,4 +19,5 @@ function reducer(state = initialState, action) {
   }
 }
 
+//主要命名
 export const storeInstance = createStore(reducer);
